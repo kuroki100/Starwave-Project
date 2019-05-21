@@ -8,7 +8,7 @@ public class ScoreCounter : MonoBehaviour {
 
     public int scoreCount = 0;
     TextMeshProUGUI score;
-
+    public TextMeshProUGUI endScore;
 	// Use this for initialization
 	public void Start () {
         score = GetComponent<TextMeshProUGUI>();
@@ -16,7 +16,7 @@ public class ScoreCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void Update () {
-
+        endScore.text = "" + scoreCount;
         score.text = "" + scoreCount;
 		
 	}

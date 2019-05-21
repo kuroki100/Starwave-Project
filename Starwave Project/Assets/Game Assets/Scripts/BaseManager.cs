@@ -29,7 +29,6 @@ public class BaseManager : MonoBehaviour {
         if (collision.gameObject.tag == "Enemy")
         {
             findScore.scoreCount -= 20;
-
             canvasBar.fillAmount -= damageIntake;
         }
 

@@ -87,6 +87,7 @@ public class WalkControl : MonoBehaviour {
         }
         if (hpBar.fillAmount <= 0)
         {
+            Time.timeScale = 0f;
             lose.SetActive(true);
             gameObject.SetActive(false);
         }

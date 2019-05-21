@@ -48,4 +48,9 @@ public class PauseMenu : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("Missao");
+    }
 }
