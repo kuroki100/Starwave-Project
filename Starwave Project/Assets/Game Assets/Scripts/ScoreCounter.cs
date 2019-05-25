@@ -18,6 +18,7 @@ public class ScoreCounter : MonoBehaviour {
 	public void Update () {
         endScore.text = "" + scoreCount;
         score.text = "" + scoreCount;
+        PlayerPrefs.SetInt("endscore", scoreCount);
 		
 	}
 }

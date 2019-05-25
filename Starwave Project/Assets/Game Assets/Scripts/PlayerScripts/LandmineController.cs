@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
 
 public class LandmineController : MonoBehaviour
 {
@@ -9,29 +11,26 @@ public class LandmineController : MonoBehaviour
     public int landMineCount = 5;
     public float qCooldown = 5;
     private float nextQ = 0;
-    public float areaRadius = 20;
 
-    //public float lmDuration = 3;
+    public Image qUI;
 
-    Vector3 worldPos;
-
-    void Update ()
+    void Update()
     {
-        //float distance = Vector3.Distance(Input.mousePosition, transform.position);
-
         SkillQ();
+
+        if (landMineCount == 0)
+        {
+            qUI.fillAmount += 1 / qCooldown * Time.deltaTime;
+        }
+        else if (landMineCount > 0)
+        {
+            qUI.fillAmount -= 1 / qCooldown * Time.deltaTime;
+        }
     }
 
     void SkillQLayout()
     {
-        
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1000))
-        {
-            worldPos = hit.point;
-        }
-        Instantiate(skillQ, worldPos, Quaternion.identity);
+        Instantiate(skillQ, transform.position, transform.rotation);
     }
 
     void SkillQ()
@@ -44,24 +43,20 @@ public class LandmineController : MonoBehaviour
             {
                 landMineCount -= 1;
                 SkillQLayout();
-                print(" you have " + landMineCount + " mines of 5.");
+                print(" you have " + landMineCount + " cannon crystals of 5.");
 
             }
             else if (landMineCount == 0)
             {
+                qUI.fillAmount += 1 / qCooldown * Time.deltaTime;
                 nextQ = Time.time + qCooldown;
+                
                 print(" Cooldown has started.");
 
                 landMineCount = 5;
-                print("you have regenerated your Land Mine you have now: " + landMineCount + ".");
+                print("you have regenerated your cannon you now have: " + landMineCount + ".");
             }
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, areaRadius);
     }
 }
 

@@ -187,6 +187,8 @@ GameObject:
   - component: {fileID: 23889437852444054}
   - component: {fileID: 65729690270698806}
   - component: {fileID: 65899920428234898}
+  - component: {fileID: 95205325369429070}
+  - component: {fileID: 114394127750776210}
   m_Layer: 11
   m_Name: PlayerMesh
   m_TagString: Untagged
@@ -305,6 +307,22 @@ GameObject:
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1513374777626324
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4583500372082462}
+  - component: {fileID: 114341023446727604}
+  m_Layer: 11
+  m_Name: Q Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -447,7 +465,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1837326248114144}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.343, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4803822227640184}
@@ -487,7 +505,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1133627315029054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.29, z: 0}
+  m_LocalPosition: {x: 0, y: 3.29, z: -104.6}
   m_LocalScale: {x: 3.363338, y: 3.0310967, z: 3.5155964}
   m_Children:
   - {fileID: 4803822227640184}
@@ -520,6 +538,19 @@ Transform:
   m_Father: {fileID: 4795754095524756}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4583500372082462
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513374777626324}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.485, y: 0.186, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4803822227640184}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4641246695174652
 Transform:
   m_ObjectHideFlags: 1
@@ -649,6 +680,7 @@ Transform:
   - {fileID: 4422209951621130}
   - {fileID: 4412374508622500}
   - {fileID: 4767202467967156}
+  - {fileID: 4583500372082462}
   m_Father: {fileID: 4500097914927130}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -1013,7 +1045,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!65 &65729690270698806
 BoxCollider:
@@ -1025,8 +1057,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7976122, y: 0.5759396, z: 1.0905434}
-  m_Center: {x: -0.015493629, y: 0.14528461, z: 0.014094806}
+  m_Size: {x: 1.7976122, y: 0.7536308, z: 1.0905434}
+  m_Center: {x: -0.015493629, y: 0.05643835, z: 0.014094806}
 --- !u!65 &65899920428234898
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1039,6 +1071,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7833409, y: 0.26275736, z: 0.92977035}
   m_Center: {x: -0.49399558, y: 0.5839215, z: -0.024884783}
+--- !u!95 &95205325369429070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1277751214340814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6fff92551985f3e4e9236b05c8b90be8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!108 &108078378063079134
 Light:
   m_ObjectHideFlags: 1
@@ -1113,6 +1163,32 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   lose: {fileID: 0}
   DamageIntake: 0.01
+--- !u!114 &114341023446727604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513374777626324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2875e6023c781a4dbb8be0f642cf9f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillQ: {fileID: 1047304357497902, guid: 0ab3c30d5d8e6f146957bbdad0e20420, type: 2}
+  landMineCount: 5
+  qCooldown: 5
+  qUI: {fileID: 0}
+--- !u!114 &114394127750776210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1277751214340814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea16c8bfe7e4a1e40bb26898667ea10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &195459614452909646
 NavMeshAgent:
   m_ObjectHideFlags: 1
